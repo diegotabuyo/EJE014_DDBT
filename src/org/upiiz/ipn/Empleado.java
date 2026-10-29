@@ -1,0 +1,45 @@
+package org.upiiz.ipn;
+
+public abstract class Empleado {
+    private String nombre;
+    private String claveEmpleado;
+    private String unidad;
+    private float aguinaldo;
+    private float bono;
+
+    public Empleado(String nombre, String claveEmpleado, String unidad) {
+        this.nombre = nombre;
+        this.claveEmpleado = claveEmpleado;
+        this.unidad = unidad;
+        aguinaldo = 0;
+        bono = 0;
+    }
+
+    public abstract float calcularSalario();
+    public abstract float calcularSalarioAnual();
+
+    public void mostrarInformacion() {
+        System.out.println("----------------------------------");
+        System.out.println("Tipo: " + getClass().getSimpleName());
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Clave: " + claveEmpleado);
+        System.out.println("Unidad: " + unidad);
+        System.out.println("Salario: " + calcularSalario());
+    }
+
+    public float getAguinaldo() {
+        return aguinaldo;
+    }
+
+    public void setAguinaldo(float aguinaldo) {
+        this.aguinaldo = aguinaldo;
+    }
+
+    public float getBono() {
+        return bono;
+    }
+
+    public void setBono(float bono) {
+        this.bono = bono;
+    }
+}
